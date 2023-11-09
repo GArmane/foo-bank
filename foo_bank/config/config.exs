@@ -36,6 +36,14 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Configure argon2 password hashing.
+# Run Argon2.Stats.report/0 function to test it.
+# Time taken recomended is ~0.5 seconds, dependent on hardware.
+config :argon2_elixir,
+  t_cost: 5, # Time cost (number of iterations). Increases security.
+  m_cost: 19, # Memory cost (2 ^ m_cost KiB). Increases time taken and memory consumption.
+  parallelism: 4 # Paralellism factor. How many threads are running. Should be half physical cores.
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

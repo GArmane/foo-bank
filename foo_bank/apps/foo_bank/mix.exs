@@ -37,6 +37,7 @@ defmodule FooBank.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:argon2_elixir, "~> 4.0"},
       {:dns_cluster, "~> 0.1.1"},
       {:phoenix_pubsub, "~> 2.1"},
       {:ecto_psql_extras, "~> 0.7.14"},
