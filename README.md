@@ -16,7 +16,6 @@ This project is comprised of the following languages and libraries:
 - Auth identity strategy: [Überauth Identity](https://github.com/ueberauth/ueberauth_identity)
 - Test coverage: [excoveralls](https://hexdocs.pm/excoveralls/readme.html)
 - Test fixtures: [ex_machina](https://hexdocs.pm/ex_machina/readme.html)
-- Test mocks: [Mock](https://hexdocs.pm/mock/Mock.html)
 - Static type-checker: [Dialyxir](https://hexdocs.pm/dialyxir/readme.html)
 - Docs generator: [ex_docs](https://hexdocs.pm/ex_doc/Mix.Tasks.Docs.html)
 
