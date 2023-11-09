@@ -1,0 +1,15 @@
+**/.formatter.exs
+**/.gitignore
+**/coveralls.json
+**/README.md
+**/CHALLENGE.md
+**/_build
+**/test
+**/deps
+.dockerignore
+.gitignore
+.gitlab-ci.yml
+docker-compose.yml
+Dockerfile
+foo-bank.code-workspace
+README.md

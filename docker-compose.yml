@@ -1,0 +1,72 @@
+version: '3.8'
+
+networks:
+  foo-bank-net:
+    name: foo-bank-net
+
+volumes:
+  pgadmin-data:
+    driver: local
+  pgsql-db-data:
+    driver: local
+
+services:
+  base: &base
+    image: garmane/foo-bank
+    hostname: foo-bank
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - .:/home/elixir/app
+    networks:
+      - foo-bank-net
+
+  app:
+    <<: *base
+    command: "mix phx.server"
+    ports:
+      - "4000:4000"
+    depends_on:
+      - pgsql-db
+
+  static-analysis:
+    <<: *base
+    command: /bin/ash -c "mix do deps.get, deps.compile, compile, dialyzer"
+  
+  tests:
+    <<: *base
+    command: /bin/ash -c "mix do deps.get, deps.compile, compile && mix coveralls"
+    depends_on:
+      - pgsql-db
+
+  pgsql-db:
+    hostname: pgsql-db
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: "dev1234"
+    ports:
+      - "9000:5432"
+    volumes:
+      - ./scripts/pgsql-db:/docker-entrypoint-initdb.d
+      - pgsql-db-data:/var/lib/postgresql/data
+    networks:
+      - foo-bank-net
+
+  pgadmin:
+    hostname: pgadmin4
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "dev@dev.com"
+      PGADMIN_DEFAULT_PASSWORD: "dev@1234"
+    ports:
+      - "6001:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - pgsql-db
+    networks:
+      - foo-bank-net
