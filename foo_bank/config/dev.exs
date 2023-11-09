@@ -3,8 +3,8 @@ import Config
 # Configure your database
 config :foo_bank, FooBank.Repo,
   username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
+  password: "dev1234",
+  hostname: "pgsql-db",
   database: "foo_bank_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
@@ -19,7 +19,7 @@ config :foo_bank, FooBank.Repo,
 config :foo_bank_web, FooBankWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: 4000],
+  http: [ip: {0, 0, 0, 0}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
