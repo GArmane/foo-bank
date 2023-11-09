@@ -13,7 +13,8 @@ defmodule FooBankWeb.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls, export: "cov"],
     ]
   end
 
@@ -23,7 +24,7 @@ defmodule FooBankWeb.MixProject do
   def application do
     [
       mod: {FooBankWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :os_mon, :runtime_tools]
     ]
   end
 
