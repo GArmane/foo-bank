@@ -26,7 +26,8 @@ defmodule FooBank.Umbrella.MixProject do
   # and cannot be accessed from applications inside the apps/ folder.
   defp deps do
     [
-      {:excoveralls, "~> 0.18.0"},
+      {:excoveralls, "~> 0.18.0", only: :test},
+      {:ex_machina, "~> 2.7", only: :test},
     ]
   end
 
