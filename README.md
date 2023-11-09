@@ -66,4 +66,4 @@ To run the API in development mode, follow these steps:
 ### Live Dashboard
 
 A simple admin dashboard is configured, simply visit:
-[dashboard](localhost:8000/dashboard)
+[dashboard](localhost:8000/dev/dashboard)
