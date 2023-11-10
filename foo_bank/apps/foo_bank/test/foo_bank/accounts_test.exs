@@ -22,7 +22,7 @@ defmodule FooBank.AccountsTest do
       assert user.name == valid_attrs.name
       assert user.surname == valid_attrs.surname
       assert user.document_number == valid_attrs.document_number
-      refute user.password == "some password"
+      refute user.password == valid_attrs.password
     end
 
     test "create_user/1 with invalid data returns error changeset" do
