@@ -29,7 +29,6 @@ defmodule FooBank.Umbrella.MixProject do
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.30.9", only: :dev, runtime: false},
       {:excoveralls, "~> 0.18.0", only: :test},
-      {:ex_machina, "~> 2.7", only: :test},
     ]
   end
 

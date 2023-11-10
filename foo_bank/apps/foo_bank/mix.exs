@@ -38,6 +38,7 @@ defmodule FooBank.MixProject do
   defp deps do
     [
       {:argon2_elixir, "~> 4.0"},
+      {:ex_machina, "~> 2.7", only: :test},
       {:dns_cluster, "~> 0.1.1"},
       {:phoenix_pubsub, "~> 2.1"},
       {:ecto_psql_extras, "~> 0.7.14"},
