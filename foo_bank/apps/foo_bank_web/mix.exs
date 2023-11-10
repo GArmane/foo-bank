@@ -14,7 +14,7 @@ defmodule FooBankWeb.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      test_coverage: [tool: ExCoveralls, export: "cov"],
+      test_coverage: [tool: ExCoveralls, export: "cov"]
     ]
   end
 

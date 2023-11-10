@@ -8,7 +8,7 @@ defmodule FooBank.Umbrella.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
-      preferred_cli_env: [coveralls: :test],
+      preferred_cli_env: [coveralls: :test]
     ]
   end
 
@@ -28,7 +28,7 @@ defmodule FooBank.Umbrella.MixProject do
     [
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.30.9", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.18.0", only: :test},
+      {:excoveralls, "~> 0.18.0", only: :test}
     ]
   end
 
