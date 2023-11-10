@@ -21,7 +21,12 @@ defmodule FooBank.AccountsTest do
     end
 
     test "create_user/1 with valid data creates a user" do
-      valid_attrs = %{name: "some name", password: "some password", surname: "some surname", document_number: "some document_number"}
+      valid_attrs = %{
+        name: "some name",
+        password: "some password",
+        surname: "some surname",
+        document_number: "some document_number"
+      }
 
       assert {:ok, %User{} = user} = Accounts.create_user(valid_attrs)
       assert user.name == "some name"
@@ -36,7 +41,13 @@ defmodule FooBank.AccountsTest do
 
     test "update_user/2 with valid data updates the user" do
       user = user_fixture()
-      update_attrs = %{name: "some updated name", password: "some updated password", surname: "some updated surname", document_number: "some updated document_number"}
+
+      update_attrs = %{
+        name: "some updated name",
+        password: "some updated password",
+        surname: "some updated surname",
+        document_number: "some updated document_number"
+      }
 
       assert {:ok, %User{} = user} = Accounts.update_user(user, update_attrs)
       assert user.name == "some updated name"
