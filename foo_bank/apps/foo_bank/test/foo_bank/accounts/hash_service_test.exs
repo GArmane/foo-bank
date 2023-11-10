@@ -22,7 +22,7 @@ defmodule FooBank.AccountsTest.HashServiceTest do
       right_input = "password"
       wrong_input = "password2"
       hash = HashService.hash_password(right_input)
-      refute = HashService.check_password(wrong_input, hash)
+      refute HashService.check_password(wrong_input, hash)
     end
   end
 

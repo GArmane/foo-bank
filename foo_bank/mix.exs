@@ -8,6 +8,7 @@ defmodule FooBank.Umbrella.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
+      test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [coveralls: :test]
     ]
   end
